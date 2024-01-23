@@ -1,0 +1,23 @@
+<html>
+<body>
+<form action="{{ url('xyz') }}" method="POST">
+@csrf
+id
+<input type="text">
+</form>
+</body>
+</html>
+
+Model xyz.php
+
+table_name="xyz";
+primaryKey id="xyz_id";
+
+controller
+
+use App/Html/Model/xyz;
+
+public function store(Request $request) {
+    $xyz = new xyz;
+    $xyz->id = $request->id;
+}
